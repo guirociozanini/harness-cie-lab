@@ -1,0 +1,18 @@
+inputSet:
+  identifier: "teste"
+  name: "teste"
+  orgIdentifier: "zanini"
+  projectIdentifier: "bootcampcizanini"
+  pipeline:
+    identifier: "paymentservicebuild"
+    properties:
+      ci:
+        codebase:
+          build:
+            type: "PR"
+            spec:
+              number: "<+trigger.prNumber>"
+    variables:
+    - name: "seusername"
+      type: "String"
+      value: "<+trigger.payload.pull_request.user.login>"
